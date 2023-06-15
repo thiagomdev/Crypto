@@ -7,8 +7,8 @@ final class CryptoTrackerViewController: UIViewController {
     
     // MARK: - Components
     private lazy var cryptoTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.rowHeight = 60
+        let tableView = UITableView()
+        tableView.rowHeight = 50
         tableView.backgroundColor = .white
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -53,6 +53,7 @@ extension CryptoTrackerViewController: UITableViewDataSource {
         let coin = viewModel.displaySymbols()[indexPath.row]
         cell.selectionStyle = .none
         cell.textLabel?.text = coin
+        cell.imageView?.image = UIImage(named: coin)
         return cell
     }
 }
