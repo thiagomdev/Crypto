@@ -7,8 +7,8 @@ final class CryptoTrackerViewController: UIViewController {
     
     // MARK: - Components
     private lazy var cryptoTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.rowHeight = 80
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.rowHeight = 60
         tableView.backgroundColor = .white
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -33,6 +33,10 @@ final class CryptoTrackerViewController: UIViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     // MARK: - Methods
     
     // MARK: - Selectors
@@ -41,11 +45,15 @@ final class CryptoTrackerViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CryptoTrackerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.count
+        return viewModel.displaySymbols().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell()
+        let coin = viewModel.displaySymbols()[indexPath.row]
+        cell.selectionStyle = .none
+        cell.textLabel?.text = coin
+        return cell
     }
 }
 
@@ -63,7 +71,7 @@ extension CryptoTrackerViewController: ViewConfiguration {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             cryptoTableView.topAnchor.constraint(
-                equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor,
+                equalToSystemSpacingBelow: view.topAnchor,
                 multiplier: 1
             ),
             
