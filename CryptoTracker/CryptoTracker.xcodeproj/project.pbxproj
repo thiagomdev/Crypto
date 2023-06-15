@@ -13,6 +13,7 @@
 		AFE14BA22A3B6FCE00CD33D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE14BA02A3B6FCE00CD33D4 /* LaunchScreen.storyboard */; };
 		AFE14BB42A3B719500CD33D4 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE14BB32A3B719500CD33D4 /* CryptoViewController.swift */; };
 		AFE14BB72A3B71BC00CD33D4 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE14BB62A3B71BC00CD33D4 /* ViewConfiguration.swift */; };
+		AFE14BB92A3B783E00CD33D4 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE14BB82A3B783E00CD33D4 /* CoinModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AFE14BA32A3B6FCE00CD33D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE14BB32A3B719500CD33D4 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		AFE14BB62A3B71BC00CD33D4 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		AFE14BB82A3B783E00CD33D4 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		AFE14BB22A3B716E00CD33D4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AFE14BB82A3B783E00CD33D4 /* CoinModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE14BB92A3B783E00CD33D4 /* CoinModel.swift in Sources */,
 				AFE14B962A3B6FCD00CD33D4 /* AppDelegate.swift in Sources */,
 				AFE14BB72A3B71BC00CD33D4 /* ViewConfiguration.swift in Sources */,
 				AFE14B982A3B6FCD00CD33D4 /* SceneDelegate.swift in Sources */,
