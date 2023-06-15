@@ -28,7 +28,7 @@ final class CryptoViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CryptoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,10 +49,25 @@ extension CryptoViewController: ViewConfiguration {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            cryptoTableView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 1),
-            cryptoTableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: cryptoTableView.trailingAnchor, multiplier: 1),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: cryptoTableView.bottomAnchor, multiplier: 1)
+            cryptoTableView.topAnchor.constraint(
+                equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor,
+                multiplier: 1
+            ),
+            
+            cryptoTableView.leadingAnchor.constraint(
+                equalToSystemSpacingAfter: view.leadingAnchor,
+                multiplier: 1
+            ),
+            
+            view.trailingAnchor.constraint(
+                equalToSystemSpacingAfter: cryptoTableView.trailingAnchor,
+                multiplier: 1
+            ),
+            
+            view.bottomAnchor.constraint(
+                equalToSystemSpacingBelow: cryptoTableView.bottomAnchor,
+                multiplier: 1
+            )
         ])
     }
     
