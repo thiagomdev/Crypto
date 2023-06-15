@@ -10,7 +10,6 @@ final class CryptoViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
