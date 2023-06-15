@@ -1,6 +1,6 @@
 import UIKit
 
-final class CryptoViewController: UIViewController {
+final class CryptoTrackerViewController: UIViewController {
 
     // MARK: - Components
     private lazy var cryptoTableView: UITableView = {
@@ -26,7 +26,7 @@ final class CryptoViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension CryptoViewController: UITableViewDataSource {
+extension CryptoTrackerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
@@ -37,12 +37,12 @@ extension CryptoViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension CryptoViewController: UITableViewDelegate {
+extension CryptoTrackerViewController: UITableViewDelegate {
     
 }
 
 // MARK: - ViewConfiguration
-extension CryptoViewController: ViewConfiguration {
+extension CryptoTrackerViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(cryptoTableView)
     }
