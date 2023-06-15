@@ -2,6 +2,9 @@ import UIKit
 
 final class CryptoTrackerViewController: UIViewController {
 
+    // MARK: - Properties
+    private let viewModel: CryptoTrackerViewModel
+    
     // MARK: - Components
     private lazy var cryptoTableView: UITableView = {
         let tableView = UITableView()
@@ -13,6 +16,16 @@ final class CryptoTrackerViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    // MARK: - Initializers
+    init(viewModel: CryptoTrackerViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -28,7 +41,7 @@ final class CryptoTrackerViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CryptoTrackerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
