@@ -9,7 +9,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CryptoTrackerViewController())
+        window?.rootViewController = UINavigationController(
+            rootViewController: CryptoTrackerViewController(
+                viewModel: .init(model: .init())
+            ))
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
