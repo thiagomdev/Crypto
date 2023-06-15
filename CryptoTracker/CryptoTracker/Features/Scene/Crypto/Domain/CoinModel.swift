@@ -9,5 +9,8 @@ struct CoinModel {
     
     init(symbol: String) {
         self.symbol = symbol
+        if let image = UIImage(named: symbol) {
+            self.image = image
+        }
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 protocol CryptoTrackerViewModelProtocol {
-    func showSymbols()
+    func displaySymbols() -> [String]
 }
 
 final class CryptoTrackerViewModel {
@@ -11,17 +11,14 @@ final class CryptoTrackerViewModel {
     init(model: [CoinModel]) {
         self.model = model
     }
-    
-    var count: Int {
-        model.count
-    }
 }
 
 extension CryptoTrackerViewModel: CryptoTrackerViewModelProtocol {
-    func showSymbols() {
+    func displaySymbols() -> [String] {
         symbols.forEach { symbol in
             let coin = CoinModel(symbol: symbol)
             model.append(coin)
         }
+        return symbols
     }
 }
