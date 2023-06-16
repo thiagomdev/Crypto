@@ -1,6 +1,6 @@
 import UIKit
 
-struct CoinModel {
+struct CoinModel: Decodable {
     var symbol: String = ""
     var image: UIImage = UIImage()
     var price: Float = 0.0
