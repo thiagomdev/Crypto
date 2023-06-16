@@ -1,9 +1,5 @@
 import Foundation
 
-enum HttpMethod: String {
-    case get = "GET"
-}
-
 protocol Request {
     var baseUrl: String { get }
     var endpoint: String { get }
